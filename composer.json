@@ -1,0 +1,33 @@
+{
+    "name": "glamour/mvc",
+    "require": {
+        "php" : "^5.6 || ^7.0"
+    },
+    "minimum-stability": "alpha",
+    "authors":[
+    {
+        "name" : "Mashal, LDA",
+        "email": "info@mashal.co.mz",
+         "homepage": "http://www.mashal.co.mz"
+    },
+    {
+        "name" : "Nélzio Sitoe",
+        "email": "nelziositoe@mashal.co.mz",
+        "homepage": "http://www.mashal.co.mz"
+    },
+    {
+        "name" : "Edson Ventura",
+        "email": "edson.ventura@mashal.co.mz",
+        "homepage": "http://www.mashal.co.mz"
+    }
+    ],
+    "autoload": {
+        "psr-0": {
+            "src": "vendor/",
+            "App": "/"
+        }
+    },
+    "config": {
+        "bin-dir":"bin"
+    }
+}

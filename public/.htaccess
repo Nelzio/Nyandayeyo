@@ -1,0 +1,6 @@
+RewriteEngine On
+Rewritecond %{REQUEST_FILENAME} !-s [OR]
+Rewritecond %{REQUEST_FILENAME} !-l [OR]
+Rewritecond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ - [NC, L]
+RewriteRule ^.*$ index.php - [NC, L]

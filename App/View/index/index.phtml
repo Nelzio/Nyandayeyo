@@ -1,0 +1,230 @@
+
+
+<!-- Header -->
+    <div class="container-fluid content">   
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-8"></div>
+            <button type="button" id="denucia" class="btn btn-danger col-2">Denucia</button>
+            <a id="violencia" class="btn btn-success col-2" href="views/pages/violencia.php">Ver Violencia</a>
+        </div>
+        <div class="row">
+            <div class="col-4" id="formulario">
+              <h2>Formulario</h2>
+              <form id="formDenuncia">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input class="form-control" type="text" name="nome" placeholder="Nome">
+                </div>
+                <div class='form-group'>
+
+                    <label for='sexo' class=' col-form-label'>Sexo</label>
+                    <div class='row'>
+                        <div class='col-6'>
+                        <div class='form-check form-check-inline ' required id='sexo'>
+                            <label class='form-check-label'>
+                                <input class='form-check-input input' type='radio' name='sexo' value='masculino'> Masculino
+                            </label>
+                        </div></div>
+                        <div class='col-6'>
+                            <div class='form-check form-check-inline '>
+                                <label class='form-check-label'>
+                                    <input class='form-check-input input' type='radio' name='sexo' value='femenino'> Feminino
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='form-group'>
+
+                    <label for='sexo' class=' col-form-label'>Estado</label>
+                    <div class='row'>
+                        <div class="col-6">
+                            <div class='form-check form-check-inline ' required id='estado'>
+                                <label class='form-check-label'>
+                                    <input class='form-check-input input' type='radio' name='tipo' value='1'> Vitima
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class='form-check form-check-inline '>
+                                <label class='form-check-label'>
+                                    <input class='form-check-input input' type='radio' name='tipo' value='2'> Denunciante
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="violencia">Tipo de Violencia</label>
+                    <select class="form-control" name="tipoViolencia">
+                        <option value="1">Violencia Psicologica</option>
+                        <option value="2">Violencia Fisica</option>
+                        <option value="3">Violencia Verbal</option>
+                        <option value="4">Violencia Social</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descricao</label>
+                    <textarea class="form-control" rows="3" name="descricao"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input class="form-control" type="text" name="telefone" placeholder="Telefone">
+                    
+                </div>
+                <div class="form-group form-inline">
+                    <div>
+                    <label for="nome">Distrito</label>
+                    <select class="form-control selecionar" name="idDistrito">
+                        <?php foreach ($this->view->selecionar as $list){ ?>
+                        <option value="<?php echo $list["id"];?>"><?php echo $list["nome"];?></option>
+                        <?php } ?>
+                    </select>
+                    </div>
+                    <div>
+                    <label for="nome">Bairro</label>
+                    <select class="form-control" id="bairro" name="idBairro">
+                    </select>
+                    </div>
+                    
+                </div>
+
+                <button type="submit" class="btn btn-primary form-control" name="violencia">Enviar</button>
+            </form>
+
+            <a href="detalhes.php">Mais detalhes</a>
+        </div>
+            <div class="col-8">
+                <div class="embed-responsive embed-responsive-16by9" id="mapid">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14350.058044596017!2d32.59947065!3d-25.9511612!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2smz!4v1511187861843" width="0" height="0" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--<div class="row">
+              <div class="col-6">
+                <!--cadForm--
+                    <div id="cadForm" class="animated bounceIn">
+                      Denucie
+                      <form method="post" action="#" class="form" id="cadastroAgente" style="text-align: left;" enctype='multipart/form-data'>
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input class="form-control" type="text" name="name" placeholder="Nome">
+                            </div>
+                            <div class='form-group'>
+
+                                <label for='sexo' class=' col-form-label'>Sexo</label>
+                                <div class='row'>
+                                    <div class='col-6'>
+                                    <div class='form-check form-check-inline ' required id='sexo'>
+                                        <label class='form-check-label'>
+                                            <input class='form-check-input input' type='radio' name='sexo' value='masculino'> Masculino
+                                        </label>
+                                    </div></div>
+                                    <div class='col-6'>
+                                        <div class='form-check form-check-inline '>
+                                            <label class='form-check-label'>
+                                                <input class='form-check-input input' type='radio' name='sexo' value='femenino'> Feminino
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class='form-group'>
+
+                                <label for='sexo' class=' col-form-label'>Estado</label>
+                                <div class='row'>
+                                    <div class="col-6">
+                                        <div class='form-check form-check-inline ' required id='estado'>
+                                            <label class='form-check-label'>
+                                                <input class='form-check-input input' type='radio' name='tipo' value='vitima'> Vitima
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class='form-check form-check-inline '>
+                                            <label class='form-check-label'>
+                                                <input class='form-check-input input' type='radio' name='tipo' value='denuciante'> Denunciante
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="form-group">
+                              <label for="violencia">Tipo de Violencia</label>
+                              <select class="form-control">
+                                  <option>Violencia Psicologica</option>
+                                  <option>Violencia Fisica</option>
+                                  <option>Violencia Verbal</option>
+                                  <option>Violencia Social</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="description">Descricao</label>
+                              <textarea class="form-control" rows="3"></textarea>
+                          </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input class="form-control" type="text" name="telefone" placeholder="Telefone">
+                            </div>
+                            <div class="form-group form-inline">
+                                <div>
+                                <label for="nome">Distrito</label>
+                                <select class="form-control selecionar">
+                                    <option value="1">Ka-Mavota</option>
+                                    <option value="2">Ka-Tembe</option>
+                                    <option value="3">Ka-Lhamakulo</option>
+                                    <option value="4">Ka-Mbukwana</option>
+                                    <option value="5">Ka-Inhaka</option>
+                                    <option value="6">Ka-Mpfumo</option>
+                                </select>
+                                </div>
+                                <div>
+                                <label for="nome">Bairro</label>
+                                <select class="form-control" id="bairro">
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="status"></div>
+                            <div class="form-group">
+                                <button class="btn btn-primary form-control" type="submit">Enviar</button>
+                            </div>
+
+                        </form>
+                    </div>--
+              </div>
+                <div class="col-6">
+                    <span style="font-size: 600px; color: #856404" class="fa fa-female"></span>
+                </div>
+          </div>-->
+          
+
+

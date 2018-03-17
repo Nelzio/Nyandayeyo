@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Nyandayeyo</title>
+<link rel='icon' href='img/logo.ico' type='image/x-icon' />
+<link rel='shortcut icon' href='img/logo.ico' type='image/x-icon' />
+<meta name='description' content=''>
+<meta name='author' content=''>
+
+<!-- Bootstrap -->
+<!--<link rel='stylesheet' type='text/css'  href='css/bootstrap.css'>
+<link rel='stylesheet' type='text/css' href='fonts/font-awesome/css/font-awesome.css'>-->
+<link href="resources/bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="resources/bootstrap-4.0.0-dist/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
+<link href="resources/bootstrap-4.0.0-dist/css/bootstrap-reboot.css" rel="stylesheet" type="text/css"/>
+<!--<link rel='icon' href='img/imobiliaria.ico' sizes='32x32' />-->
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="static/stylesheet/main.css" rel="stylesheet" type="text/css"/>
+
+<!-- Stylesheet
+    ================================================== -->
+<!--<link rel='stylesheet' type='text/css' href='css/prettyPhoto.css'>-->
+<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<script type='text/javascript' src='js/modernizr.custom.js'></script>-->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
+      <script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
+    <![endif]-->
+<style>
+    #preloader{
+        position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #ddd;
+	z-index: 99999;
+	height: 100%;
+    }
+    #status {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 64px;
+	height: 64px;
+	margin: -32px 0 0 -32px;
+	padding: 0;
+}
+</style>
+</head>
+<?php $caminho = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH); ?>
+<body id='page-top' data-spy='scroll' data-target='.navbar-fixed-top'>
+    
+<div id='preloader'>
+  <div id='status'> <img src='img/preloader.gif' height='64' width='64' alt=''> </div>
+</div>
+    <nav class="navbar navbar-expand-lg navbar-costom">
+        <a class="navbar-brand" href="/"><img class="logo" src="static/images/logo.png"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav my-2 my-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/ajuda" target="_blank">Ajuda</a>
+              </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Sobre</a>
+               </li>
+            </ul>
+              <!--<ul class="navbar-nav navbar-right">
+                 <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Definicoes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Editar definicoes</a>
+                  <a class="dropdown-item" href="#">Denuciar</a>
+                  <a class="dropdown-item" href="#">Alterar senha</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Sair</a>
+                </div>
+              </li> 
+              </ul>-->
+
+          </div>
+        </nav>
+
+    <?php
+    echo $this->content();
+    ?>
+    
+    	<div class="container-fuild footer">
+		<p class="text-center">Muthianas 2017</p>
+	
+		
+	</div>
+<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+<script>
+$("#preloader").hide("slow");
+$("#status").hide("slow");
+</script>
+<script src="resources/bootstrap-4.0.0-dist/js/bootstrap.js" type="text/javascript"></script>
+<script src="resources/bootstrap-4.0.0-dist/js/bootstrap.bundle.js" type="text/javascript"></script>
+<script type='text/javascript' src='js/custom.js'></script> 
+<script type='text/javascript' src='js/ajax.js'></script> 
+<!-- Javascripts
+    ================================================== --> 
+<script>
+    //$(".navbar").hide();
+</script>
+<script type="text/javascript">
+		window.onload = function (){
+			var formulario = document.getElementById('formulario');
+			var mapid = document.getElementById('mapid');
+			formulario.style.display = "none";
+			document.getElementById("denucia").addEventListener("click", function(){
+	   			    if (formulario.style.display === "none") {
+			        formulario.style.display = "block";
+			        mapid.style.width = "60vw"
+			      } else {
+			      	 mapid.style.width = "90vw"
+			        formulario.style.display = "none";
+			    	}
+				});
+		};
+
+		
+	</script>
+</body>
+</html>
